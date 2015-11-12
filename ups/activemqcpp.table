@@ -1,4 +1,5 @@
 setupRequired(apr)
+setupRequired(apr_util)
 setupOptional(doxygen)
 
 envPrepend(PATH, ${PRODUCT_DIR}/bin)
