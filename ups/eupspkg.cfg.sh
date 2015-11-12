@@ -1,6 +1,11 @@
 # EupsPkg config file. Sourced by 'eupspkg'
 
-CONFIGURE_OPTIONS="--prefix=$PREFIX --with-apr=$APR_DIR --enable-doxygen-man --libdir=$PREFIX/lib"
+ssloptions=""
+if [[ $(uname) == Darwin ]]; then
+    ssloptions="--disable-ssl"
+fi
+
+CONFIGURE_OPTIONS="--prefix=$PREFIX --with-apr=$APR_DIR --enable-doxygen-man --libdir=$PREFIX/lib $ssloptions"
 MAKE_BUILD_TARGETS="all doxygen-run"
 
 install()
